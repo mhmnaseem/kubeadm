@@ -16,7 +16,7 @@ nodeRegistration:
 #   #Docker     /var/run/dockershim.sock
 #   #containerd        /run/containerd/containerd.sock
 #   #CRI-O     /var/run/crio/crio.sock
-    criSocket: /run/containerd/containerd.sock
+    criSocket: /var/run/cri-dockerd.sock
 #   imagePullPolicy: IfNotPresent
 #   #Edit, add the server name that plays the master role
 #   name: kube-master
@@ -37,7 +37,7 @@ kind: ClusterConfiguration
 kubernetesVersion: 1.22.0
 networking:
   dnsDomain: cluster.local
-  serviceSubnet: 10.96.0.0/12
+  serviceSubnet: 10.244.0.0/16
 scheduler: {}
 
 #Add the following section
